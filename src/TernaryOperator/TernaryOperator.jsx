@@ -3,11 +3,9 @@
 // Develop a component that toggles between two images based on a boolean state. -Done
 // Implement a component that changes the font size based on a boolean state. -Done
 // Create a component that renders different background images based on a boolean state. - Done
-// Build a component that toggles between displaying two different lists based on a boolean state.
-// Develop a component that changes the border style based on a boolean state.
-// Implement a component that alternates between two different input fields based on a boolean state.
-// Create a component that renders different icons based on a boolean state.
-// Build a component that switches between rendering text and an input field based on a boolean state.
+// Build a component that toggles between displaying two different lists based on a boolean state. -Done
+// Create a component that renders different icons based on a boolean state. - Done
+// Build a component that switches between rendering text and an input field based on a boolean state. -Done
 
 import { useState } from "react";
 
@@ -17,6 +15,7 @@ export default function TernaryOperator() {
   const [color] = useState(true);
   const [image, setImage] = useState(true);
   const [textSize] = useState(true);
+  const [icon] = useState(true);
   return (
     <>
       <h1>{hello ? "Hello World!" : "Goodbye, World!"}</h1>
@@ -55,6 +54,45 @@ export default function TernaryOperator() {
           backgroundPosition: "center",
         }}
       ></div>
+
+      <ul>
+        {hello ? (
+          <ul>
+            <li>Banana</li>
+            <li>Apple</li>
+            <li>Orange</li>
+          </ul>
+        ) : (
+          <>
+            <li>Egg plant</li>
+            <li>Okra</li>
+            <li>Cabbage</li>
+          </>
+        )}
+      </ul>
+
+      <ul>
+        {!hello ? (
+          <ul>
+            <li>Banana</li>
+            <li>Apple</li>
+            <li>Orange</li>
+          </ul>
+        ) : (
+          <>
+            <li>Egg plant</li>
+            <li>Okra</li>
+            <li>Cabbage</li>
+          </>
+        )}
+      </ul>
+
+      <button>{icon ? "Sun" : "Moon"}</button>
+
+      <button>{!icon ? "Sun" : "Moon"}</button>
+
+      <ul>{hello ? <h1>hello</h1> : <input type="text" />}</ul>
+      <ul>{!hello ? <h1>hello</h1> : <input type="text" />}</ul>
     </>
   );
 }
