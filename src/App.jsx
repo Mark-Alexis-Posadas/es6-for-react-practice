@@ -1,9 +1,9 @@
-import FilterFruits from "./MapFilterReduce/Filter/FilterFruits";
+import FilerGreaterThanOne from "./MapFilterReduce/Filter/FilerGreaterThanOne";
 
 const App = () => {
   return (
     <>
-      <FilterFruits />
+      <FilerGreaterThanOne />
     </>
   );
 };
