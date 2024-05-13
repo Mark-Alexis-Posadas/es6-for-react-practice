@@ -1,5 +1,11 @@
+import TernaryOperator from "./TernaryOperator/TernaryOperator";
+
 const App = () => {
-  return <div>App</div>;
+  return (
+    <>
+      <TernaryOperator />
+    </>
+  );
 };
 
 export default App;
