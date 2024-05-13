@@ -1,9 +1,9 @@
-import TernaryOperatorOptimizeVersion from "./TernaryOperator/TernaryOperatorOptimizeVersion";
+import Map from "./MapFilterReduce/Map";
 
 const App = () => {
   return (
     <>
-      <TernaryOperatorOptimizeVersion />
+      <Map />
     </>
   );
 };
