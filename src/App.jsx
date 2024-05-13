@@ -1,9 +1,9 @@
-import FilerGreaterThanOne from "./MapFilterReduce/Filter/FilerGreaterThanOne";
+import FilterAgeLess from "./MapFilterReduce/Filter/FilterAgeLess";
 
 const App = () => {
   return (
     <>
-      <FilerGreaterThanOne />
+      <FilterAgeLess />
     </>
   );
 };
