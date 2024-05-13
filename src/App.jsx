@@ -1,9 +1,9 @@
-import TernaryOperator from "./TernaryOperator/TernaryOperator";
+import TernaryOperatorOptimizeVersion from "./TernaryOperator/TernaryOperatorOptimizeVersion";
 
 const App = () => {
   return (
     <>
-      <TernaryOperator />
+      <TernaryOperatorOptimizeVersion />
     </>
   );
 };
