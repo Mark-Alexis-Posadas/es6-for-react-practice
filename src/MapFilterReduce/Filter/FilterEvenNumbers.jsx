@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Filter() {
+export default function FilterEvenNumbers() {
   const initialArray = [1, 2, 3, 4, 5];
   const [filteredArray, setFilteredArray] = useState(initialArray);
   const [showEven, setShowEven] = useState(false);

@@ -1,9 +1,9 @@
-import Filter from "./MapFilterReduce/Filter";
+import FilterFruits from "./MapFilterReduce/Filter/FilterFruits";
 
 const App = () => {
   return (
     <>
-      <Filter />
+      <FilterFruits />
     </>
   );
 };
