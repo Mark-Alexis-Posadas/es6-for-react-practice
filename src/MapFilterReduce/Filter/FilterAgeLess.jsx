@@ -1,5 +1,4 @@
-// Filtered array with fruits containing the letter "a".
-
+// Filtered array with objects having an age less than 30.
 import { useState } from "react";
 
 const initialArray = [

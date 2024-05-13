@@ -1,9 +1,9 @@
-import FilterAgeLess from "./MapFilterReduce/Filter/FilterAgeLess";
+import FilterFruitsWithStartLetter from "./MapFilterReduce/Filter/FilterFruitsWithStartLetter";
 
 const App = () => {
   return (
     <>
-      <FilterAgeLess />
+      <FilterFruitsWithStartLetter />
     </>
   );
 };
