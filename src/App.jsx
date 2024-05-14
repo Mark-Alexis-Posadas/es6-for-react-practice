@@ -1,32 +1,31 @@
 import { useState } from "react";
+
 const initialArray = [
-  { id: 1, name: "John", category: "A" },
-  { id: 2, name: "Jane", category: "B" },
-  { id: 3, name: "Doe", category: "A" },
+  { id: 1, name: "John", score: 80 },
+  { id: 2, name: "Jane", score: 90 },
+  { id: 3, name: "Doe", score: 85 },
 ];
 
-export default function FilterByGivenCategory() {
-  const [filterByGivenCategory, setFilterByGivenCategory] =
-    useState(initialArray);
+export default function FilterByScore() {
+  const givenNumber = 85;
+  const [filterByScore, setFilterByScore] = useState(initialArray);
   const [showNum, setShowNum] = useState(false);
 
   const handleToggle = () => {
     setShowNum((prev) => !prev);
     if (!showNum) {
-      setFilterByGivenCategory(
-        initialArray.filter((arr) => arr.category === "A")
-      );
+      setFilterByScore(initialArray.filter((arr) => arr.score >= givenNumber));
     } else {
-      setFilterByGivenCategory(initialArray);
+      setFilterByScore(initialArray);
     }
   };
 
   return (
     <>
       <ul>
-        {filterByGivenCategory.map((item) => (
+        {filterByScore.map((item) => (
           <li key={item.id}>
-            {item.id} - {item.name} {item.category}
+            {item.name} - {item.score}
           </li>
         ))}
       </ul>
