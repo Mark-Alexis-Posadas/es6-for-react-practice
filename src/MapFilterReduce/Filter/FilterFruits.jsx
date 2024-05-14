@@ -1,5 +1,3 @@
-// Filtered array with fruits containing the letter "a".
-
 import { useState } from "react";
 
 const initialArray = ["apple", "banana", "grape", "orange", "kiwi"];
