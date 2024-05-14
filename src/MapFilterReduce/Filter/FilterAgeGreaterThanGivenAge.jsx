@@ -1,39 +1,36 @@
 import { useState } from "react";
 
-const initialArray = [
+const users = [
   { id: 1, name: "John", age: 25 },
   { id: 2, name: "Jane", age: 30 },
   { id: 3, name: "Doe", age: 35 },
 ];
 
 export default function FilterAgeGreaterThanGivenAge() {
-  const givenNumber = 30;
-  const [filterAgeGreaterThanGivenAge, setFilterAgeGreaterThanGivenAge] =
-    useState(initialArray);
-  const [showNum, setShowNum] = useState(false);
+  const givenAge = 30;
+  const [filteredUsers, setFilteredUsers] = useState(users);
+  const [showFiltered, setShowFiltered] = useState(false);
 
-  const handleToggle = () => {
-    setShowNum((prev) => !prev);
-    if (!showNum) {
-      setFilterAgeGreaterThanGivenAge(
-        initialArray.filter((arr) => arr.age >= givenNumber)
-      );
+  const handleToggleFilter = () => {
+    setShowFiltered((prev) => !prev);
+    if (!showFiltered) {
+      setFilteredUsers(users.filter((user) => user.age >= givenAge));
     } else {
-      setFilterAgeGreaterThanGivenAge(initialArray);
+      setFilteredUsers(users);
     }
   };
 
   return (
     <>
       <ul>
-        {filterAgeGreaterThanGivenAge.map((item) => (
-          <li key={item.id}>
-            {item.name} - {item.age}
+        {filteredUsers.map((user) => (
+          <li key={user.id}>
+            {user.name} - {user.age}
           </li>
         ))}
       </ul>
 
-      <button onClick={handleToggle}>Toggle</button>
+      <button onClick={handleToggleFilter}>Toggle</button>
     </>
   );
 }
