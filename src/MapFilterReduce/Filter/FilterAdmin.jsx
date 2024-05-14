@@ -1,34 +1,34 @@
 import { useState } from "react";
 
-const initialArray = [
+const users = [
   { id: 1, name: "John", isAdmin: true },
   { id: 2, name: "Jane", isAdmin: false },
   { id: 3, name: "Doe", isAdmin: true },
 ];
 
 export default function FilterAdmin() {
-  const [filteredIsAdmin, setFilteredIsAdmin] = useState(initialArray);
-
+  const [filteredUsers, setFilteredUsers] = useState(users);
   const [showAdmin, setShowAdmin] = useState(false);
-  const handleClick = () => {
+
+  const handleFilterClick = () => {
     setShowAdmin((prev) => !prev);
     if (!showAdmin) {
-      setFilteredIsAdmin(initialArray.filter((arr) => arr.isAdmin !== false));
+      setFilteredUsers(users.filter((user) => user.isAdmin));
     } else {
-      setFilteredIsAdmin(initialArray);
+      setFilteredUsers(users);
     }
   };
 
   return (
     <>
       <ul>
-        {filteredIsAdmin.map((item, index) => (
-          <li key={index}>
-            {item.name} - {item.age}
+        {filteredUsers.map((user) => (
+          <li key={user.id}>
+            {user.name} - {user.id}
           </li>
         ))}
       </ul>
-      <button onClick={handleClick}>Filter Admin</button>
+      <button onClick={handleFilterClick}>Filter Admin</button>
     </>
   );
 }

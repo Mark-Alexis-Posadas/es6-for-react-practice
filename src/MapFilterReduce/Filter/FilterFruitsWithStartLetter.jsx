@@ -1,16 +1,17 @@
 import { useState } from "react";
 
-const initialArray = ["apple", "banana", "grape", "orange", "kiwi"];
-export default function FilterFruitsWithStartLetter() {
-  const [filteredFruits, setFilteredFruits] = useState(initialArray);
-  const [showFruits, setShowFruits] = useState(false);
+const fruits = ["apple", "banana", "grape", "orange", "kiwi"];
 
-  const handleClick = () => {
-    setShowFruits((prevFruit) => !prevFruit);
-    if (!showFruits) {
-      setFilteredFruits(initialArray.filter((arr) => arr.startsWith("a")));
+export default function FilterFruitsWithStartLetter() {
+  const [filteredFruits, setFilteredFruits] = useState(fruits);
+  const [showFilteredFruits, setShowFilteredFruits] = useState(false);
+
+  const handleToggleFruits = () => {
+    setShowFilteredFruits((prevShowFilteredFruits) => !prevShowFilteredFruits);
+    if (!showFilteredFruits) {
+      setFilteredFruits(fruits.filter((fruit) => fruit.startsWith("a")));
     } else {
-      setFilteredFruits(initialArray);
+      setFilteredFruits(fruits);
     }
   };
 
@@ -22,7 +23,9 @@ export default function FilterFruitsWithStartLetter() {
         ))}
       </ul>
 
-      <button onClick={handleClick}>Filter fruits the contains letter A</button>
+      <button onClick={handleToggleFruits}>
+        Filter fruits that start with letter A
+      </button>
     </div>
   );
 }

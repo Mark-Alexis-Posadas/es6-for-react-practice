@@ -1,33 +1,30 @@
 import { useState } from "react";
 
-const initialArray = [10, 20, 30, 40, 50];
+const numbers = [10, 20, 30, 40, 50];
 
 export default function FilterNumberGreaterThanGivenNumber() {
   const givenNumber = 21;
-  const [filterGreaterThanGivenNumber, setFilterGreaterThanGivenNumber] =
-    useState(initialArray);
-  const [showNum, setShowNum] = useState(false);
+  const [filteredNumbers, setFilteredNumbers] = useState(numbers);
+  const [showFiltered, setShowFiltered] = useState(false);
 
-  const handleToggle = () => {
-    setShowNum((prev) => !prev);
-    if (!showNum) {
-      setFilterGreaterThanGivenNumber(
-        initialArray.filter((arr) => arr > givenNumber)
-      );
+  const handleToggleNumbers = () => {
+    setShowFiltered((prev) => !prev);
+    if (!showFiltered) {
+      setFilteredNumbers(numbers.filter((number) => number > givenNumber));
     } else {
-      setFilterGreaterThanGivenNumber(initialArray);
+      setFilteredNumbers(numbers);
     }
   };
 
   return (
     <>
       <ul>
-        {filterGreaterThanGivenNumber.map((item, index) => (
-          <li key={index}>{item}</li>
+        {filteredNumbers.map((number, index) => (
+          <li key={index}>{number}</li>
         ))}
       </ul>
 
-      <button onClick={handleToggle}>Toggle</button>
+      <button onClick={handleToggleNumbers}>Toggle</button>
     </>
   );
 }

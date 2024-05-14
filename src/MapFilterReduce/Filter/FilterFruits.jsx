@@ -1,17 +1,17 @@
 import { useState } from "react";
 
-const initialArray = ["apple", "banana", "grape", "orange", "kiwi"];
+const fruits = ["apple", "banana", "grape", "orange", "kiwi"];
 
 export default function FilterFruits() {
-  const [filteredFruits, setFilteredFruits] = useState(initialArray);
-  const [showFruits, setShowFruits] = useState(false);
+  const [filteredFruits, setFilteredFruits] = useState(fruits);
+  const [showFilteredFruits, setShowFilteredFruits] = useState(false);
 
-  const handleClick = () => {
-    setShowFruits((prevFruit) => !prevFruit);
-    if (!showFruits) {
-      setFilteredFruits(initialArray.filter((arr) => arr.includes("a")));
+  const handleToggleFruits = () => {
+    setShowFilteredFruits((prevShowFilteredFruits) => !prevShowFilteredFruits);
+    if (!showFilteredFruits) {
+      setFilteredFruits(fruits.filter((fruit) => fruit.includes("a")));
     } else {
-      setFilteredFruits(initialArray);
+      setFilteredFruits(fruits);
     }
   };
 
@@ -23,7 +23,9 @@ export default function FilterFruits() {
         ))}
       </ul>
 
-      <button onClick={handleClick}>Filter fruits the contains letter A</button>
+      <button onClick={handleToggleFruits}>
+        Filter fruits that contain letter A
+      </button>
     </div>
   );
 }
