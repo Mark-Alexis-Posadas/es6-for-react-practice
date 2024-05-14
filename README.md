@@ -23,7 +23,7 @@
 - Filtered array with objects having an age less than 30.- `Done`
 - Filtered array with fruits starting with the given letter.- `Done`
 - Filtered array with numbers greater than the given number.- `Done`
-- Filtered array with objects where isAdmin is true.
+- Filtered array with objects where isAdmin is true.- `Done`
 - Filtered array with objects having an age greater than or equal to the given age.
 - Filtered array with objects having the given category.
 - Filtered array with objects having a score greater than 85.
