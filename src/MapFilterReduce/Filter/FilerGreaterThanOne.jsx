@@ -1,28 +1,29 @@
 import { useState } from "react";
 
-const initialArray = [
+const users = [
   { id: 1, name: "John" },
   { id: 2, name: "Jane" },
   { id: 3, name: "Doe" },
 ];
 
-export default function FilerGreaterThanOne() {
-  const [filteredId, setFilteredId] = useState(initialArray);
-  const filteredOutput = initialArray.filter((arr) => arr.id > 1);
+export default function FilterGreaterThanOne() {
+  const [filteredUsers, setFilteredUsers] = useState(users);
+  const usersWithIdGreaterThanOne = users.filter((user) => user.id > 1);
 
-  const handleClick = () => {
-    setFilteredId(filteredOutput);
+  const handleFilterClick = () => {
+    setFilteredUsers(usersWithIdGreaterThanOne);
   };
+
   return (
     <>
       <ul>
-        {filteredId.map((item, index) => (
-          <li key={index}>
-            {item.name} - {item.id}
+        {filteredUsers.map((user) => (
+          <li key={user.id}>
+            {user.name} - {user.id}
           </li>
         ))}
       </ul>
-      <button onClick={handleClick}>toggle id greater than on</button>
+      <button onClick={handleFilterClick}>Toggle ID Greater Than One</button>
     </>
   );
 }

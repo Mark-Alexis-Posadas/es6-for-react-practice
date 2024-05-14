@@ -1,29 +1,29 @@
 import { useState } from "react";
 
 export default function FilterEvenNumbers() {
-  const initialArray = [1, 2, 3, 4, 5];
-  const [filteredArray, setFilteredArray] = useState(initialArray);
+  const numbers = [1, 2, 3, 4, 5];
+  const [filteredNumbers, setFilteredNumbers] = useState(numbers);
   const [showEven, setShowEven] = useState(false);
 
-  const handleClick = () => {
+  const handleToggleEvenNumbers = () => {
     setShowEven((prevShowEven) => !prevShowEven);
 
     if (!showEven) {
-      setFilteredArray(initialArray.filter((num) => num % 2 === 0));
+      setFilteredNumbers(numbers.filter((num) => num % 2 === 0));
     } else {
-      setFilteredArray(initialArray);
+      setFilteredNumbers(numbers);
     }
   };
 
   return (
     <div>
       <ul>
-        {filteredArray.map((array, index) => (
-          <li key={index}>{array}</li>
+        {filteredNumbers.map((number, index) => (
+          <li key={index}>{number}</li>
         ))}
       </ul>
 
-      <button onClick={handleClick}>Toggle Even Numbers</button>
+      <button onClick={handleToggleEvenNumbers}>Toggle Even Numbers</button>
     </div>
   );
 }
